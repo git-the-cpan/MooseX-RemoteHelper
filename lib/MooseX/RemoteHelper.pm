@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use namespace::autoclean;
 
-our $VERSION = '0.001010'; # VERSION
+our $VERSION = '0.001011'; # VERSION
 
 use Moose 2 ();
 use Moose::Exporter;
@@ -46,14 +46,14 @@ MooseX::RemoteHelper - adds an attribute name to represent remote naming
 
 =head1 VERSION
 
-version 0.001010
+version 0.001011
 
 =head1 SYNOPSIS
 
 	{
 		package Message;
 		use Moose 2;
-		with 'MooseX::RemoteHelper::CompositeSerializtion';
+		with 'MooseX::RemoteHelper::CompositeSerialization';
 
 		use MooseX::RemoteHelper;
 
@@ -97,6 +97,11 @@ L<MooseX::RemoteHelper::Meta::Trait::Attribute>
 for serialize read
 
 L<MooseX::RemoteHelper::CompositeSerialization>
+
+This module is well tested, but the method, attribute, and module names may be
+subject to change as I haven't decided that I am in love with all of them.
+Also, suggestions welcome to that end. Version will update semantically on API
+change.
 
 =head1 ACKNOWLEDGMENTS
 

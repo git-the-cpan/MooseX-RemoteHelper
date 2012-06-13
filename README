@@ -2,13 +2,13 @@ NAME
     MooseX::RemoteHelper - adds an attribute name to represent remote naming
 
 VERSION
-    version 0.001010
+    version 0.001011
 
 SYNOPSIS
             {
                     package Message;
                     use Moose 2;
-                    with 'MooseX::RemoteHelper::CompositeSerializtion';
+                    with 'MooseX::RemoteHelper::CompositeSerialization';
 
                     use MooseX::RemoteHelper;
 
@@ -51,6 +51,11 @@ DESCRIPTION
     for serialize read
 
     MooseX::RemoteHelper::CompositeSerialization
+
+    This module is well tested, but the method, attribute, and module names
+    may be subject to change as I haven't decided that I am in love with all
+    of them. Also, suggestions welcome to that end. Version will update
+    semantically on API change.
 
 ACKNOWLEDGMENTS
     Some of this code is based on or outright copied from MooseX::Aliases

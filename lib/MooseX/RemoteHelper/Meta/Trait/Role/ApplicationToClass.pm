@@ -3,7 +3,7 @@ use strict;
 use warnings;
 use namespace::autoclean;
 
-our $VERSION = '0.001010'; # VERSION
+our $VERSION = '0.001011'; # VERSION
 
 use Moose::Role;
 
@@ -35,7 +35,7 @@ MooseX::RemoteHelper::Meta::Trait::Role::ApplicationToClass - For Roles applied 
 
 =head1 VERSION
 
-version 0.001010
+version 0.001011
 
 =head1 BUGS
 
