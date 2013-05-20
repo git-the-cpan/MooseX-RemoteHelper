@@ -3,7 +3,7 @@ use strict;
 use warnings;
 use namespace::autoclean;
 
-our $VERSION = '0.001011'; # VERSION
+our $VERSION = '0.001012'; # VERSION
 
 use Moose::Role;
 
@@ -40,6 +40,7 @@ around _inline_slot_initializer => sub {
 # ABSTRACT: meta class for immutable objects
 
 __END__
+
 =pod
 
 =head1 NAME
@@ -48,12 +49,12 @@ MooseX::RemoteHelper::Meta::Trait::Class - meta class for immutable objects
 
 =head1 VERSION
 
-version 0.001011
+version 0.001012
 
 =head1 BUGS
 
 Please report any bugs or feature requests on the bugtracker website
-https://github.com/xenoterracide/MooseX-RemoteHelper/issues
+https://github.com/xenoterracide/moosex-remotehelper/issues
 
 When submitting a bug or request, please include a test-file or a
 patch to an existing test-file that illustrates the bug or desired
@@ -77,11 +78,10 @@ Caleb Cushing <xenoterracide@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is Copyright (c) 2012 by Caleb Cushing.
+This software is Copyright (c) 2013 by Caleb Cushing.
 
 This is free software, licensed under:
 
   The Artistic License 2.0 (GPL Compatible)
 
 =cut
-

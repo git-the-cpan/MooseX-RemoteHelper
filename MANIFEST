@@ -13,6 +13,7 @@ lib/MooseX/RemoteHelper/Meta/Trait/Role.pm
 lib/MooseX/RemoteHelper/Meta/Trait/Role/ApplicationToClass.pm
 lib/MooseX/RemoteHelper/Meta/Trait/Role/ApplicationToRole.pm
 lib/MooseX/RemoteHelper/Meta/Trait/Role/Composite.pm
+lib/MooseX/RemoteHelper/Types.pm
 perlcritic.rc
 t/00-compile.t
 t/000-report-versions-tiny.t
@@ -40,3 +41,4 @@ t/release-test-version.t
 t/release-unused-vars.t
 t/role.t
 t/serializer.t
+t/types.t

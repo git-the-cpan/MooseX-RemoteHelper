@@ -1,35 +1,29 @@
-package MooseX::RemoteHelper::Meta::Trait::Role::ApplicationToRole;
+package MooseX::RemoteHelper::Types;
 use strict;
 use warnings;
-use namespace::autoclean;
 
 our $VERSION = '0.001012'; # VERSION
 
-use Moose::Role;
+use MooseX::Types    -declare => [qw( Bool TrueFalse )];
+use MooseX::Types::Moose -all => { -prefix => 'Moose' };
 
-around apply => sub {
-	my $orig = shift;
-	my $self = shift;
-	my ( $role1 , $role2 ) = @_;
+subtype TrueFalse, as MooseStr,
+	where {
+		$_ =~ m/^(true|t|f|false)$/ixms;
+	};
 
-	$role2 = Moose::Util::MetaRole::apply_metaroles(
-		for => $role2,
-		role_metaroles => {
-			application_to_class =>
-				['MooseX::RemoteHelper::Meta::Trait::Role::ApplicationToClass']
-			,
-			application_to_role  =>
-				['MooseX::RemoteHelper::Meta::Trait::Role::ApplicationToRole']
-			,
-		},
-	);
-
-	$self->$orig( $role1, $role2 );
-};
+subtype Bool, as MooseBool;
+coerce  Bool, from TrueFalse,
+	via {
+		my $val = lc $_;
+		if ( $val =~ m/^t/xms ) {
+			return 1;
+		}
+		return 0;
+	};
 
 1;
-
-# ABSTRACT: For Roles applied to Roles
+# ABSTRACT: Types to help with things commonly needed by remotes
 
 __END__
 
@@ -37,11 +31,19 @@ __END__
 
 =head1 NAME
 
-MooseX::RemoteHelper::Meta::Trait::Role::ApplicationToRole - For Roles applied to Roles
+MooseX::RemoteHelper::Types - Types to help with things commonly needed by remotes
 
 =head1 VERSION
 
 version 0.001012
+
+=head1 SUBROUTINES
+
+=head2 Bool
+
+coerces from string where values could match (case insensitive):
+
+	true, t, false, f
 
 =head1 BUGS
 
