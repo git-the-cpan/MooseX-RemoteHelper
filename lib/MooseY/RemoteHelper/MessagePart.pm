@@ -1,19 +1,17 @@
-package MooseX::RemoteHelper::Meta::Trait::Role;
+package MooseY::RemoteHelper::MessagePart;
 use strict;
 use warnings;
 use namespace::autoclean;
 
 our $VERSION = '0.001013'; # VERSION
 
-use Moose::Role;
+use Moose;
+use MooseX::RemoteHelper;
+use MooseX::UndefTolerant;
 
-sub composition_class_roles {
-	return 'MooseX::RemoteHelper::Meta::Trait::Role::Composite'
-}
-
+__PACKAGE__->meta->make_immutable;
 1;
-
-# ABSTRACT: meta role
+# ABSTRACT: Base class for a part of a message
 
 __END__
 
@@ -21,17 +19,22 @@ __END__
 
 =head1 NAME
 
-MooseX::RemoteHelper::Meta::Trait::Role - meta role
+MooseY::RemoteHelper::MessagePart - Base class for a part of a message
 
 =head1 VERSION
 
 version 0.001013
 
-=head1 METHODS
+=head1 SYNOPSIS
 
-=head2 composition_class_roles
+	use Moose;
+	extends 'MooseY::RemoteHelper::MessagePart';
 
-See L<Moose::Meta::Role/Construction>
+=head1 DESCRIPTION
+
+This is mostly useful for auto importing extensions which are sane when
+dealing with remote APIs. Since I work with a lot of remote APIs I got tired
+of writing this class.
 
 =head1 BUGS
 

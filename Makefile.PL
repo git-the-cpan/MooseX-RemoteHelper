@@ -25,6 +25,7 @@ my %WriteMakefileArgs = (
     "Moose::Role" => 0,
     "MooseX::Types" => 0,
     "MooseX::Types::Moose" => 0,
+    "MooseX::UndefTolerant" => 0,
     "namespace::autoclean" => 0,
     "strict" => 0,
     "warnings" => 0
@@ -37,7 +38,7 @@ my %WriteMakefileArgs = (
     "Test::Moose" => 0,
     "Test::More" => "0.88"
   },
-  "VERSION" => "0.001012",
+  "VERSION" => "0.001013",
   "test" => {
     "TESTS" => "t/*.t"
   }

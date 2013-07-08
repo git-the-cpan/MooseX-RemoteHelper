@@ -2,7 +2,7 @@ package MooseX::RemoteHelper::Types;
 use strict;
 use warnings;
 
-our $VERSION = '0.001012'; # VERSION
+our $VERSION = '0.001013'; # VERSION
 
 use MooseX::Types    -declare => [qw( Bool TrueFalse )];
 use MooseX::Types::Moose -all => { -prefix => 'Moose' };
@@ -35,7 +35,7 @@ MooseX::RemoteHelper::Types - Types to help with things commonly needed by remot
 
 =head1 VERSION
 
-version 0.001012
+version 0.001013
 
 =head1 SUBROUTINES
 

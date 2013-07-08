@@ -3,7 +3,7 @@ use strict;
 use warnings;
 use namespace::autoclean;
 
-our $VERSION = '0.001012'; # VERSION
+our $VERSION = '0.001013'; # VERSION
 
 use Moose::Role;
 
@@ -66,7 +66,7 @@ MooseX::RemoteHelper::CompositeSerialization - Serialize object recursively
 
 =head1 VERSION
 
-version 0.001012
+version 0.001013
 
 =head1 SYNOPSIS
 

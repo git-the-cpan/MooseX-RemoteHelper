@@ -17,7 +17,7 @@ eval "use Test::Spelling 0.12; use Pod::Wordlist::hanekomu; 1" or die $@;
 add_stopwords(<DATA>);
 all_pod_files_spelling_ok( qw( bin lib  ) );
 __DATA__
-APIs
+Str
 Perigrin
 Prather
 serializer
@@ -25,15 +25,18 @@ Caleb
 Cushing
 xenoterracide
 lib
-MooseX
+MooseY
 RemoteHelper
+MessagePart
+MooseX
 Meta
 Trait
 Role
-Composite
-Class
-CompositeSerialization
-Types
-ApplicationToClass
 ApplicationToRole
+ApplicationToClass
+Types
+CompositeSerialization
+Client
+Composite
 Attribute
+Class
