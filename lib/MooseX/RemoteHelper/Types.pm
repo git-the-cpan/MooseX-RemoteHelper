@@ -2,22 +2,25 @@ package MooseX::RemoteHelper::Types;
 use strict;
 use warnings;
 
-our $VERSION = '0.001013'; # VERSION
+our $VERSION = '0.001014'; # VERSION
 
 use MooseX::Types    -declare => [qw( Bool TrueFalse )];
 use MooseX::Types::Moose -all => { -prefix => 'Moose' };
 
 subtype TrueFalse, as MooseStr,
 	where {
-		$_ =~ m/^(true|t|f|false)$/ixms;
+		$_ =~ m/^(true|t|f|false|enabled|disabled)$/ixms;
 	};
 
 subtype Bool, as MooseBool;
 coerce  Bool, from TrueFalse,
 	via {
 		my $val = lc $_;
-		if ( $val =~ m/^t/xms ) {
+		if ( $val =~ m/^t/xms || $val eq 'enabled' ) {
 			return 1;
+		}
+		elsif ( $val eq 'disabled' ) {
+			return 0;
 		}
 		return 0;
 	};
@@ -35,7 +38,7 @@ MooseX::RemoteHelper::Types - Types to help with things commonly needed by remot
 
 =head1 VERSION
 
-version 0.001013
+version 0.001014
 
 =head1 SUBROUTINES
 
@@ -43,7 +46,7 @@ version 0.001013
 
 coerces from string where values could match (case insensitive):
 
-	true, t, false, f
+	true, t, false, f, enabled, disabled
 
 =head1 BUGS
 
