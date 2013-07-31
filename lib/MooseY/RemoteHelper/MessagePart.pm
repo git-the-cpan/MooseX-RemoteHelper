@@ -3,15 +3,17 @@ use strict;
 use warnings;
 use namespace::autoclean;
 
-our $VERSION = '0.001015'; # VERSION
+our $VERSION = '0.001016'; # VERSION
 
 use Moose;
 use MooseX::RemoteHelper;
 use MooseX::UndefTolerant;
+use MooseX::Constructor::AllErrors;
 
 __PACKAGE__->meta->make_immutable;
 1;
 # ABSTRACT: Base class for a part of a message
+# SEEALSO:  MooseX::UndefTolerant, MooseX::Constructor::AllErrors
 
 __END__
 
@@ -23,7 +25,7 @@ MooseY::RemoteHelper::MessagePart - Base class for a part of a message
 
 =head1 VERSION
 
-version 0.001015
+version 0.001016
 
 =head1 SYNOPSIS
 
@@ -54,6 +56,14 @@ Please see those modules/websites for more information related to this module.
 =item *
 
 L<MooseX::RemoteHelper|MooseX::RemoteHelper>
+
+=item *
+
+L<MooseX::UndefTolerant|MooseX::UndefTolerant>
+
+=item *
+
+L<MooseX::Constructor::AllErrors|MooseX::Constructor::AllErrors>
 
 =back
 

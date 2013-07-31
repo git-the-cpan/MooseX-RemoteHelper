@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use namespace::autoclean;
 
-our $VERSION = '0.001015'; # VERSION
+our $VERSION = '0.001016'; # VERSION
 
 use Moose 2 ();
 use Moose::Exporter;
@@ -46,22 +46,25 @@ MooseX::RemoteHelper - adds an attribute name to represent remote naming
 
 =head1 VERSION
 
-version 0.001015
+version 0.001016
 
 =head1 SYNOPSIS
 
 	{
 		package Message;
 		use Moose 2;
+		extends 'MooseY::RemoteHelper::MessagePart';
 		with 'MooseX::RemoteHelper::CompositeSerialization';
 
 		use MooseX::RemoteHelper;
+		use MooseX::RemoteHelper::Types qw( Bool );
 
 		has bool => (
 			remote_name => 'Boolean',
-			isa         => 'Bool',
+			isa         => Bool,
 			is          => 'ro',
-			serializer => sub {
+			coerce      => 1,
+			serializer  => sub {
 				my ( $attr, $instance ) = @_;
 				return $attr->get_value( $instance ) ? 'Y' : 'N';
 			},
@@ -72,15 +75,53 @@ version 0.001015
 			remote_name => 'FooBar',
 			isa         => 'Str',
 			is          => 'ro',
+			required    => 1,
+		);
+
+		has optional => (
+			remote_name => 'Optional',
+			isa         => 'Str',
+			is          => 'ro',
+			predicate   => 'has_optional',
 		);
 
 		__PACKAGE__->meta->make_immutable;
 	}
 
-	my $message = Message->new({ Boolean => 1, foo_bar => 'Baz', });
+	use Try::Tiny;
 
-	$message->bool;      # 1
-	$message->serialize; # { Boolean => 'Y', FooBar => 'Baz' }
+    # note: hardcoding is an example, more likely these values come from user
+    # input, or remote system input, so getting undef where you expect a str
+    # is more common, or enabled, where you need a bool
+	my $message0
+		= Message->new({
+			Boolean  => 'enabled',
+			foo_bar  => 'Baz',
+			optional => undef,
+		});
+
+	$message0->bool;         # 1
+	$message0->has_optional; # ''
+	$message0->serialize;    # { Boolean => 'Y', FooBar => 'Baz' }
+
+	# you probably want to handle exceptions
+	my $message1
+		= try {
+			Message->new({
+				Boolean  => 'enabled',
+				foo_bar  => undef,
+			});
+		}
+		catch {
+			# note you probably want to use Safe::Isa if you may have more
+			# exceptions
+			if ( $_->isa('MooseX::Constructor::AllErrors::Error::Constructor')
+			) {
+				foreach my $error ( $_->errors ) {
+					# log $error->message
+				}
+			}
+		};
 
 =head1 DESCRIPTION
 
