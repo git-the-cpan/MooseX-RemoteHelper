@@ -3,12 +3,12 @@ use strict;
 use warnings;
 use namespace::autoclean;
 
-our $VERSION = '0.001016'; # VERSION
+our $VERSION = '0.001017'; # VERSION
 
 use Moose;
 use MooseX::RemoteHelper;
 use MooseX::UndefTolerant;
-use MooseX::Constructor::AllErrors;
+#use MooseX::Constructor::AllErrors;
 
 __PACKAGE__->meta->make_immutable;
 1;
@@ -25,7 +25,7 @@ MooseY::RemoteHelper::MessagePart - Base class for a part of a message
 
 =head1 VERSION
 
-version 0.001016
+version 0.001017
 
 =head1 SYNOPSIS
 

@@ -23,7 +23,6 @@ my %WriteMakefileArgs = (
     "Moose" => 2,
     "Moose::Exporter" => 0,
     "Moose::Role" => 0,
-    "MooseX::Constructor::AllErrors" => 0,
     "MooseX::Types" => 0,
     "MooseX::Types::Moose" => 0,
     "MooseX::UndefTolerant" => 0,
@@ -34,11 +33,12 @@ my %WriteMakefileArgs = (
   "TEST_REQUIRES" => {
     "Capture::Tiny" => 0,
     "Class::Load" => "0.20",
+    "Test0" => 0,
     "Test::Method" => 0,
     "Test::Moose" => 0,
     "Test::More" => "0.88"
   },
-  "VERSION" => "0.001016",
+  "VERSION" => "0.001017",
   "test" => {
     "TESTS" => "t/*.t"
   }

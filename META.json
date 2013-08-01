@@ -39,7 +39,6 @@
             "Moose" : "2",
             "Moose::Exporter" : "0",
             "Moose::Role" : "0",
-            "MooseX::Constructor::AllErrors" : "0",
             "MooseX::Types" : "0",
             "MooseX::Types::Moose" : "0",
             "MooseX::UndefTolerant" : "0",
@@ -53,6 +52,7 @@
          "requires" : {
             "Capture::Tiny" : "0",
             "Class::Load" : "0.20",
+            "Test0" : "0",
             "Test::Method" : "0",
             "Test::Moose" : "0",
             "Test::More" : "0.88"
@@ -62,47 +62,47 @@
    "provides" : {
       "MooseX::RemoteHelper" : {
          "file" : "lib/MooseX/RemoteHelper.pm",
-         "version" : "0.001016"
+         "version" : "0.001017"
       },
       "MooseX::RemoteHelper::CompositeSerialization" : {
          "file" : "lib/MooseX/RemoteHelper/CompositeSerialization.pm",
-         "version" : "0.001016"
+         "version" : "0.001017"
       },
       "MooseX::RemoteHelper::Meta::Trait::Attribute" : {
          "file" : "lib/MooseX/RemoteHelper/Meta/Trait/Attribute.pm",
-         "version" : "0.001016"
+         "version" : "0.001017"
       },
       "MooseX::RemoteHelper::Meta::Trait::Class" : {
          "file" : "lib/MooseX/RemoteHelper/Meta/Trait/Class.pm",
-         "version" : "0.001016"
+         "version" : "0.001017"
       },
       "MooseX::RemoteHelper::Meta::Trait::Role" : {
          "file" : "lib/MooseX/RemoteHelper/Meta/Trait/Role.pm",
-         "version" : "0.001016"
+         "version" : "0.001017"
       },
       "MooseX::RemoteHelper::Meta::Trait::Role::ApplicationToClass" : {
          "file" : "lib/MooseX/RemoteHelper/Meta/Trait/Role/ApplicationToClass.pm",
-         "version" : "0.001016"
+         "version" : "0.001017"
       },
       "MooseX::RemoteHelper::Meta::Trait::Role::ApplicationToRole" : {
          "file" : "lib/MooseX/RemoteHelper/Meta/Trait/Role/ApplicationToRole.pm",
-         "version" : "0.001016"
+         "version" : "0.001017"
       },
       "MooseX::RemoteHelper::Meta::Trait::Role::Composite" : {
          "file" : "lib/MooseX/RemoteHelper/Meta/Trait/Role/Composite.pm",
-         "version" : "0.001016"
+         "version" : "0.001017"
       },
       "MooseX::RemoteHelper::Types" : {
          "file" : "lib/MooseX/RemoteHelper/Types.pm",
-         "version" : "0.001016"
+         "version" : "0.001017"
       },
       "MooseY::RemoteHelper::MessagePart" : {
          "file" : "lib/MooseY/RemoteHelper/MessagePart.pm",
-         "version" : "0.001016"
+         "version" : "0.001017"
       },
       "MooseY::RemoteHelper::Role::Client" : {
          "file" : "lib/MooseY/RemoteHelper/Role/Client.pm",
-         "version" : "0.001016"
+         "version" : "0.001017"
       }
    },
    "release_status" : "stable",
@@ -117,6 +117,6 @@
          "web" : "https://github.com/xenoterracide/moosex-remotehelper"
       }
    },
-   "version" : "0.001016"
+   "version" : "0.001017"
 }
 

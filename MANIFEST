@@ -27,6 +27,7 @@ t/composite.t
 t/false_init_arg.t
 t/immutable.t
 t/init_args.t
+t/message-part.t
 t/release-cpan-changes.t
 t/release-dist-manifest.t
 t/release-distmeta.t

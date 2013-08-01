@@ -30,13 +30,13 @@ RemoteHelper
 Meta
 Trait
 Role
-ApplicationToRole
 Composite
+ApplicationToRole
+ApplicationToClass
 MooseY
 MessagePart
-ApplicationToClass
 Class
-Attribute
-CompositeSerialization
 Types
 Client
+CompositeSerialization
+Attribute

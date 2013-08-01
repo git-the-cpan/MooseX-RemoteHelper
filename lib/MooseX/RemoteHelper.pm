@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use namespace::autoclean;
 
-our $VERSION = '0.001016'; # VERSION
+our $VERSION = '0.001017'; # VERSION
 
 use Moose 2 ();
 use Moose::Exporter;
@@ -46,7 +46,7 @@ MooseX::RemoteHelper - adds an attribute name to represent remote naming
 
 =head1 VERSION
 
-version 0.001016
+version 0.001017
 
 =head1 SYNOPSIS
 
@@ -103,25 +103,6 @@ version 0.001016
 	$message0->bool;         # 1
 	$message0->has_optional; # ''
 	$message0->serialize;    # { Boolean => 'Y', FooBar => 'Baz' }
-
-	# you probably want to handle exceptions
-	my $message1
-		= try {
-			Message->new({
-				Boolean  => 'enabled',
-				foo_bar  => undef,
-			});
-		}
-		catch {
-			# note you probably want to use Safe::Isa if you may have more
-			# exceptions
-			if ( $_->isa('MooseX::Constructor::AllErrors::Error::Constructor')
-			) {
-				foreach my $error ( $_->errors ) {
-					# log $error->message
-				}
-			}
-		};
 
 =head1 DESCRIPTION
 
