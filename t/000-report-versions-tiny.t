@@ -58,7 +58,6 @@ eval { $v .= pmver('MooseX::Types','any version') };
 eval { $v .= pmver('MooseX::Types::Moose','any version') };
 eval { $v .= pmver('MooseX::UndefTolerant','any version') };
 eval { $v .= pmver('Pod::Coverage::TrustPod','any version') };
-eval { $v .= pmver('Test0','any version') };
 eval { $v .= pmver('Test::CPAN::Changes','0.19') };
 eval { $v .= pmver('Test::CPAN::Meta','any version') };
 eval { $v .= pmver('Test::Method','any version') };
