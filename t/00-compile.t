@@ -1,49 +1,53 @@
 use strict;
 use warnings;
 
-# This test was generated via Dist::Zilla::Plugin::Test::Compile 2.011
+# this test was generated with Dist::Zilla::Plugin::Test::Compile 2.025
 
-use Test::More 0.88;
+use Test::More  tests => 11 + ($ENV{AUTHOR_TESTING} ? 1 : 0);
 
 
 
-use Capture::Tiny qw{ capture };
-
-my @module_files = qw(
-lib/MooseX/RemoteHelper.pm
-lib/MooseX/RemoteHelper/CompositeSerialization.pm
-lib/MooseX/RemoteHelper/Meta/Trait/Attribute.pm
-lib/MooseX/RemoteHelper/Meta/Trait/Class.pm
-lib/MooseX/RemoteHelper/Meta/Trait/Role.pm
-lib/MooseX/RemoteHelper/Meta/Trait/Role/ApplicationToClass.pm
-lib/MooseX/RemoteHelper/Meta/Trait/Role/ApplicationToRole.pm
-lib/MooseX/RemoteHelper/Meta/Trait/Role/Composite.pm
-lib/MooseX/RemoteHelper/Types.pm
-lib/MooseY/RemoteHelper/MessagePart.pm
-lib/MooseY/RemoteHelper/Role/Client.pm
+my @module_files = (
+    'MooseX/RemoteHelper.pm',
+    'MooseX/RemoteHelper/CompositeSerialization.pm',
+    'MooseX/RemoteHelper/Meta/Trait/Attribute.pm',
+    'MooseX/RemoteHelper/Meta/Trait/Class.pm',
+    'MooseX/RemoteHelper/Meta/Trait/Role.pm',
+    'MooseX/RemoteHelper/Meta/Trait/Role/ApplicationToClass.pm',
+    'MooseX/RemoteHelper/Meta/Trait/Role/ApplicationToRole.pm',
+    'MooseX/RemoteHelper/Meta/Trait/Role/Composite.pm',
+    'MooseX/RemoteHelper/Types.pm',
+    'MooseY/RemoteHelper/MessagePart.pm',
+    'MooseY/RemoteHelper/Role/Client.pm'
 );
 
-my @scripts = qw(
 
-);
 
 # no fake home requested
+
+use IPC::Open3;
+use IO::Handle;
 
 my @warnings;
 for my $lib (@module_files)
 {
-    my ($stdout, $stderr, $exit) = capture {
-        system($^X, '-Mblib', '-e', qq{require qq[$lib]});
-    };
-    is($?, 0, "$lib loaded ok");
-    warn $stderr if $stderr;
-    push @warnings, $stderr if $stderr;
+    # see L<perlfaq8/How can I capture STDERR from an external command?>
+    my $stdin = '';     # converted to a gensym by open3
+    my $stderr = IO::Handle->new;
+
+    my $pid = open3($stdin, '>&STDERR', $stderr, qq{$^X -Mblib -e"require q[$lib]"});
+    waitpid($pid, 0);
+    is($? >> 8, 0, "$lib loaded ok");
+
+    if (my @_warnings = <$stderr>)
+    {
+        warn @_warnings;
+        push @warnings, @_warnings;
+    }
 }
+
+
 
 is(scalar(@warnings), 0, 'no warnings found') if $ENV{AUTHOR_TESTING};
 
 
-
-
-
-done_testing;

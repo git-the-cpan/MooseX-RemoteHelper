@@ -26,18 +26,22 @@ my %WriteMakefileArgs = (
     "MooseX::Types" => 0,
     "MooseX::Types::Moose" => 0,
     "MooseX::UndefTolerant" => 0,
+    "Safe::Isa" => 0,
     "namespace::autoclean" => 0,
     "strict" => 0,
     "warnings" => 0
   },
   "TEST_REQUIRES" => {
-    "Capture::Tiny" => 0,
     "Class::Load" => "0.20",
+    "IO::Handle" => 0,
+    "IPC::Open3" => 0,
+    "MooseX::Aliases" => 0,
     "Test::Method" => 0,
     "Test::Moose" => 0,
-    "Test::More" => "0.88"
+    "Test::More" => "0.88",
+    "Test::Requires" => 0
   },
-  "VERSION" => "0.001018",
+  "VERSION" => "0.001019",
   "test" => {
     "TESTS" => "t/*.t"
   }

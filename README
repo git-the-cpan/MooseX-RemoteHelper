@@ -2,7 +2,7 @@ NAME
     MooseX::RemoteHelper - adds an attribute name to represent remote naming
 
 VERSION
-    version 0.001018
+    version 0.001019
 
 SYNOPSIS
             {

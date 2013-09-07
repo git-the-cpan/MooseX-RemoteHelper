@@ -3,7 +3,7 @@ use strict;
 use warnings;
 use namespace::autoclean;
 
-our $VERSION = '0.001018'; # VERSION
+our $VERSION = '0.001019'; # VERSION
 
 use Moose::Role;
 
@@ -43,7 +43,7 @@ MooseY::RemoteHelper::Role::Client - Commonly used attributes for remote facade'
 
 =head1 VERSION
 
-version 0.001018
+version 0.001019
 
 =head1 SYNOPSIS
 

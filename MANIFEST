@@ -23,11 +23,13 @@ t/apply-trait.t
 t/author-critic.t
 t/author-pod-spell.t
 t/author-test-eol.t
+t/composite-array-of-objects.t
 t/composite.t
 t/false_init_arg.t
 t/immutable.t
 t/init_args.t
 t/message-part.t
+t/mx-aliases.t
 t/release-cpan-changes.t
 t/release-dist-manifest.t
 t/release-distmeta.t

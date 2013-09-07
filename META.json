@@ -4,7 +4,7 @@
       "Caleb Cushing <xenoterracide@gmail.com>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.300035, CPAN::Meta::Converter version 2.131560",
+   "generated_by" : "Dist::Zilla version 4.300037, CPAN::Meta::Converter version 2.132140",
    "license" : [
       "artistic_2"
    ],
@@ -42,6 +42,7 @@
             "MooseX::Types" : "0",
             "MooseX::Types::Moose" : "0",
             "MooseX::UndefTolerant" : "0",
+            "Safe::Isa" : "0",
             "namespace::autoclean" : "0",
             "perl" : "5.008",
             "strict" : "0",
@@ -50,58 +51,61 @@
       },
       "test" : {
          "requires" : {
-            "Capture::Tiny" : "0",
             "Class::Load" : "0.20",
+            "IO::Handle" : "0",
+            "IPC::Open3" : "0",
+            "MooseX::Aliases" : "0",
             "Test::Method" : "0",
             "Test::Moose" : "0",
-            "Test::More" : "0.88"
+            "Test::More" : "0.88",
+            "Test::Requires" : "0"
          }
       }
    },
    "provides" : {
       "MooseX::RemoteHelper" : {
          "file" : "lib/MooseX/RemoteHelper.pm",
-         "version" : "0.001018"
+         "version" : "0.001019"
       },
       "MooseX::RemoteHelper::CompositeSerialization" : {
          "file" : "lib/MooseX/RemoteHelper/CompositeSerialization.pm",
-         "version" : "0.001018"
+         "version" : "0.001019"
       },
       "MooseX::RemoteHelper::Meta::Trait::Attribute" : {
          "file" : "lib/MooseX/RemoteHelper/Meta/Trait/Attribute.pm",
-         "version" : "0.001018"
+         "version" : "0.001019"
       },
       "MooseX::RemoteHelper::Meta::Trait::Class" : {
          "file" : "lib/MooseX/RemoteHelper/Meta/Trait/Class.pm",
-         "version" : "0.001018"
+         "version" : "0.001019"
       },
       "MooseX::RemoteHelper::Meta::Trait::Role" : {
          "file" : "lib/MooseX/RemoteHelper/Meta/Trait/Role.pm",
-         "version" : "0.001018"
+         "version" : "0.001019"
       },
       "MooseX::RemoteHelper::Meta::Trait::Role::ApplicationToClass" : {
          "file" : "lib/MooseX/RemoteHelper/Meta/Trait/Role/ApplicationToClass.pm",
-         "version" : "0.001018"
+         "version" : "0.001019"
       },
       "MooseX::RemoteHelper::Meta::Trait::Role::ApplicationToRole" : {
          "file" : "lib/MooseX/RemoteHelper/Meta/Trait/Role/ApplicationToRole.pm",
-         "version" : "0.001018"
+         "version" : "0.001019"
       },
       "MooseX::RemoteHelper::Meta::Trait::Role::Composite" : {
          "file" : "lib/MooseX/RemoteHelper/Meta/Trait/Role/Composite.pm",
-         "version" : "0.001018"
+         "version" : "0.001019"
       },
       "MooseX::RemoteHelper::Types" : {
          "file" : "lib/MooseX/RemoteHelper/Types.pm",
-         "version" : "0.001018"
+         "version" : "0.001019"
       },
       "MooseY::RemoteHelper::MessagePart" : {
          "file" : "lib/MooseY/RemoteHelper/MessagePart.pm",
-         "version" : "0.001018"
+         "version" : "0.001019"
       },
       "MooseY::RemoteHelper::Role::Client" : {
          "file" : "lib/MooseY/RemoteHelper/Role/Client.pm",
-         "version" : "0.001018"
+         "version" : "0.001019"
       }
    },
    "release_status" : "stable",
@@ -116,6 +120,6 @@
          "web" : "https://github.com/xenoterracide/moosex-remotehelper"
       }
    },
-   "version" : "0.001018"
+   "version" : "0.001019"
 }
 
