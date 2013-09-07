@@ -3,7 +3,7 @@ use strict;
 use warnings;
 use namespace::autoclean;
 
-our $VERSION = '0.001019'; # VERSION
+our $VERSION = '0.001020'; # VERSION
 
 use Moose::Role;
 use Safe::Isa;
@@ -43,14 +43,10 @@ sub serialize {
 					# let's try to handle array refs of objects if we know
 					# that's what they are
 					if ( $attr->has_type_constraint
-						&& $attr->type_constraint->is_subtype_of('ArrayRef')
-						&& ( $attr->type_constraint
-								->type_parameter
-								->is_subtype_of('Object')
-							|| $attr->type_constraint
+						&& $attr->type_constraint->is_a_type_of('ArrayRef')
+						&& $attr->type_constraint
 								->type_parameter
 								->is_a_type_of('Object')
-						)
 					) {
 						$serialized{ $attr->remote_name }
 							= [
@@ -85,7 +81,7 @@ MooseX::RemoteHelper::CompositeSerialization - Serialize object recursively
 
 =head1 VERSION
 
-version 0.001019
+version 0.001020
 
 =head1 SYNOPSIS
 

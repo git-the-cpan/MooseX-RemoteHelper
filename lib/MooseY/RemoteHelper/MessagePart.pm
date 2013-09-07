@@ -3,7 +3,7 @@ use strict;
 use warnings;
 use namespace::autoclean;
 
-our $VERSION = '0.001019'; # VERSION
+our $VERSION = '0.001020'; # VERSION
 
 use Moose;
 use MooseX::RemoteHelper;
@@ -25,7 +25,7 @@ MooseY::RemoteHelper::MessagePart - Base class for a part of a message
 
 =head1 VERSION
 
-version 0.001019
+version 0.001020
 
 =head1 SYNOPSIS
 
