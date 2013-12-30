@@ -2,7 +2,7 @@ NAME
     MooseX::RemoteHelper - adds an attribute name to represent remote naming
 
 VERSION
-    version 0.001020
+    version 0.001021
 
 SYNOPSIS
             {
@@ -82,7 +82,7 @@ DESCRIPTION
 ACKNOWLEDGMENTS
     Some of this code is based on or outright copied from MooseX::Aliases
 
-    *   Chris Prather ( Perigrin ) <https://metacpan.org/author/PERIGRIN>
+    *   <Chris Prather ( Perigrin )>
 
         for help getting the basics working and understanding what some of
         this code does.

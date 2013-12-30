@@ -3,7 +3,7 @@ use strict;
 use warnings;
 use namespace::autoclean;
 
-our $VERSION = '0.001020'; # VERSION
+our $VERSION = '0.001021'; # VERSION
 
 use Moose::Role;
 
@@ -37,19 +37,23 @@ __END__
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 MooseY::RemoteHelper::Role::Client - Commonly used attributes for remote facade's
 
 =head1 VERSION
 
-version 0.001020
+version 0.001021
 
 =head1 SYNOPSIS
 
+	use 5.010;
 	# implementers
 	use Moose;
-	use Class::Load 0.20 'load_class';
+	use Module::Runtime 'use_module';
+	use Try::Tiny;
 
 	with 'MooseY::RemoteHelper::Role::Client';
 
@@ -69,14 +73,21 @@ version 0.001020
 	my $req; # your request object
 
 	my $client
-		= load_class('My::Client')->new({
+		= use_module('My::Client')->new({
 			user  => 'Str',
 			pass  => 'Str',
 			test  => 0,
 			debug => 1,
 		});
 
-	my $res = try { $client->submit( $req ) } catch { ... if $_->does('Throwable') };
+	my $res = try {
+			$client->submit( $req )
+		}
+		catch {
+			# ...
+			# if $_->does('Throwable')
+			# ...
+		};
 
 =head1 DESCRIPTION
 

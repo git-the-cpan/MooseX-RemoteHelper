@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use namespace::autoclean;
 
-our $VERSION = '0.001020'; # VERSION
+our $VERSION = '0.001021'; # VERSION
 
 use Moose 2 ();
 use Moose::Exporter;
@@ -40,13 +40,15 @@ __END__
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 MooseX::RemoteHelper - adds an attribute name to represent remote naming
 
 =head1 VERSION
 
-version 0.001020
+version 0.001021
 
 =head1 SYNOPSIS
 

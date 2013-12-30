@@ -3,7 +3,7 @@ use strict;
 use warnings;
 use namespace::autoclean;
 
-our $VERSION = '0.001020'; # VERSION
+our $VERSION = '0.001021'; # VERSION
 
 use Moose;
 use MooseX::RemoteHelper;
@@ -19,13 +19,15 @@ __END__
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 MooseY::RemoteHelper::MessagePart - Base class for a part of a message
 
 =head1 VERSION
 
-version 0.001020
+version 0.001021
 
 =head1 SYNOPSIS
 

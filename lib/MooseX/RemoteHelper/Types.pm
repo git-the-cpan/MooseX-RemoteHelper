@@ -2,7 +2,7 @@ package MooseX::RemoteHelper::Types;
 use strict;
 use warnings;
 
-our $VERSION = '0.001020'; # VERSION
+our $VERSION = '0.001021'; # VERSION
 
 use MooseX::Types    -declare => [qw( Bool TrueFalse )];
 use MooseX::Types::Moose -all => { -prefix => 'Moose' };
@@ -32,13 +32,15 @@ __END__
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 MooseX::RemoteHelper::Types - Types to help with things commonly needed by remotes
 
 =head1 VERSION
 
-version 0.001020
+version 0.001021
 
 =head1 SUBROUTINES
 
